@@ -151,3 +151,6 @@ else if (opcion == "2"){
         prestamo.getDatosPrestamo();
     }
 }
+else{
+    console.log("el usuario no tiene prestamos en el sistema");
+}
