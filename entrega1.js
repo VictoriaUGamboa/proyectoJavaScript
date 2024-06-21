@@ -91,6 +91,17 @@ calcularCuotas(valor, cuotas); {
     }
 }
 
+getDatosPrestamo (); {
+    console.log("PRESTAMO REGIO");
+    console.log("Nombre", this.nombre);
+    console.log("Valor", this.valor);
+    console.log("Cuotas", this.cuotas);
+    console.log("Vas a pagar", this.valorTotal);
+}
+
+
+
+
 let nombreUsuario = "";
 let listaPrestamos = [];
 
@@ -119,4 +130,15 @@ while (nombreUsuario != "FIN") {
 
 
 //BUSCAR PRESTAMOS
+
+let opcion = prompt("1) Ver prestamos 2) Ver tus prestamos");
+
+let nombre;
+
+if(opcion == "1"){
+    console.log("Historial de Prestamos");
+    for( let prestamo of listaPrestamos){
+        prestamo.getDatosPrestamo();
+    }
+}
 
