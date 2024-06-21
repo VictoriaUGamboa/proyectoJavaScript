@@ -100,7 +100,9 @@ getDatosPrestamo (); {
 }
 
 
-
+function filtrarPrestamos (objetoPrestamo) {
+    return objetoPrestamo.nombre == nombre
+}
 
 let nombreUsuario = "";
 let listaPrestamos = [];
@@ -141,4 +143,11 @@ if(opcion == "1"){
         prestamo.getDatosPrestamo();
     }
 }
+else if (opcion == "2"){
+    nombre = prompt ("Ingrese el nombre a buscar");
+    let resultadoFilter = listaPrestamos.filter(filtrarPrestamos);
 
+    for (let prestamo of resultadoFilter){
+        prestamo.getDatosPrestamo();
+    }
+}
