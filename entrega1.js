@@ -62,5 +62,61 @@ function mostrarInfoPrestamo(valor, cantidadCuotas, total) {
 }
 
 
+// ENTREGA 2
 
+class Prestamo {
+    constructor(nombre, valor, cuotas) {
+        this.nombre = nombre;
+        this.valor = valor;
+        this.cuotas = cuotas;
+        this.valorTotal = 0;
+    }
+}
+
+
+calcularCuotas(valor, cuotas); {
+
+    let interes;
+
+    if (cuotas == 1) {
+        this.valorTotal = valor;
+    }
+    else if (cuotas == 3) {
+        interes = valor * 0.20;
+        this.valorTotal = valor + interes;
+    }
+    else if (cuotas == 6) {
+        interes = valor * 0.50;
+        this.valorTotal = valor + interes;
+    }
+}
+
+let nombreUsuario = "";
+let listaPrestamos = [];
+
+while (nombreUsuario != "FIN") {
+    console.log("PRESTAMO REGIO");
+    console.log("");
+
+    nombreUsuario = prompt("Escriba su nombre o FIN para terminar");
+
+    if (nombreUsuario != "FIN") {
+        let valor = prompt("Ingrese el monto");
+        valor = parseInt(valor);
+        console.log("1 cuotas: sin interes");
+        console.log("3 cuotas: 20% interes");
+        console.log("6 cuotas: 50% interes");
+        let cuotas = prompt("Ingrese las cuotas");
+
+        //OBJETO
+        let objetoPrestamo = new Prestamo(nombreUsuario, valor, cuotas);
+        objetoPrestamo.calcularCuotas(valor, cuotas);
+        listaPrestamos.push(objetoPrestamo);
+        console.log("Ud ha adquirido el prestamo");
+    }
+}
+
+
+
+//BUSCAR PRESTAMOS
 
